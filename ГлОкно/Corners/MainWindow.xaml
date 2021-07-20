@@ -1,0 +1,305 @@
+﻿<Window x:Class="Corners.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:Corners"
+        mc:Ignorable="d"
+        Title="Corners" Height="720" Width="1360" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid x:Name="MainGrid" Width="1360" Height="719.7">
+        <Grid.Background>
+            <ImageBrush ImageSource="img/setka.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Canvas x:Name="Canvas1" Background="Transparent" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1353" MouseUp="Canvas1_MouseUp" MouseMove="Canvas1_MouseMove" MouseDown="Canvas1_MouseDown">
+            <Image x:Name="One" Visibility="Hidden" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Source="img/corner1.png" Canvas.Left="149" Canvas.Top="111"/>
+            <Image x:Name="Two" Visibility="Hidden" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Source="img/corner2.png" Canvas.Left="149" Canvas.Top="193"/>
+            <Image x:Name="Three" Visibility="Hidden" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Source="img/corner3.png" Canvas.Left="244" Canvas.Top="226"/>
+            <Image x:Name="Four" Visibility="Hidden" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Source="img/corner4.png" Canvas.Left="350" Canvas.Top="195"/>
+            <Image x:Name="Five" Visibility="Hidden" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Source="img/corner5.png" Canvas.Left="426" Canvas.Top="255"/>
+            <Button Content="Очистить"  Click="Button_Click" Height="63" Canvas.Left="49" Canvas.Top="43" Width="146"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"/>
+            <Label x:Name="LB" Visibility="Hidden" Content="Label" Height="26"  Canvas.Left="314" Canvas.Top="164" Width="38"/>
+        </Canvas>
+        <Grid x:Name="TregGrid" Visibility="Hidden" Background="#FF294751" Margin="0,0,0,-0.3" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="170,166,0,0" TextWrapping="Wrap" Text="Треугольник называют прямоугольным, если у него есть прямой угол. Прямоугольный треугольник имеет две взаимно перпендикулярные стороны, называемые катетами; третья его сторона называется гипотенузой." VerticalAlignment="Top" Height="199" Width="1124" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="82" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Прямоугольный треугольник" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="244,434,0,0" TextWrapping="Wrap" Text="Нарисуй прямоугольный треугольник по вершинам." VerticalAlignment="Top" Height="46" Width="1050" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut" Content="Начать" HorizontalAlignment="Left" Margin="531,551,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TregGridFinal" Visibility="Hidden" Background="#FF294751" Margin="0,-11,0,9.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="40,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="792" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}" Text="Свойства прямоугольного треугольника:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="618,0,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut1" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1150,598,0,0" VerticalAlignment="Top" Width="150" Height="55" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="290" Margin="1031,239,0,0" VerticalAlignment="Top" Width="319" Source="img/Прямоугольник.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="40,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="955" FontSize="28" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- По свойствам перпендикуляра и наклонных гипотенуза длиннее каждого из катетов (но меньше их суммы)."/>
+            <TextBlock HorizontalAlignment="Left" Margin="40,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="91" Width="955" FontSize="28" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Сумма двух острых углов прямоугольного треугольника равна прямому углу."/>
+            <TextBlock HorizontalAlignment="Left" Margin="40,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="129" Width="974" FontSize="28" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Две высоты прямоугольного треугольника совпадают с его катетами. Поэтому одна из четырех замечательных точек попадает в вершины прямого угла треугольника."/>
+            <TextBlock HorizontalAlignment="Left" Margin="40,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="974" FontSize="28" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Центр описанной окружности прямоугольного треугольника лежит в середине гипотенузы."/>
+            <TextBlock HorizontalAlignment="Left" Margin="40,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="147" Width="974" FontSize="28" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Медиана прямоугольного треугольника, проведенная из вершины прямоуго угла на гипотенузу, является радиусом описанной около этого треугольника окружности."/>
+        </Grid>
+        <Grid x:Name="TregGridTup" Visibility="Hidden" Background="#FF294751" Margin="-10,-1,0,0.7" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="58,157,0,0" TextWrapping="Wrap" Text="Тупоугольный треугольник – это треугольник, у которого один угол тупой, а два других – острые. В свою очередь, тупой угол – это угол, градусная мера которого составляет 90° до 180°, а острый угол – это угол, градусная мера которого составляет менее 90 градусов" VerticalAlignment="Top" Height="233" Width="1292" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Тупоугольный треугольник" HorizontalAlignment="Left" Margin="457,0,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="246,422,0,0" TextWrapping="Wrap" Text="Нарисуй тупоугольный треугольник по вершинам." VerticalAlignment="Top" Height="51" Width="941" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut2"   Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Content="Начать" HorizontalAlignment="Left" Margin="527,578,0,0" VerticalAlignment="Top" Width="314" Height="67" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TregGridTupFinal" Visibility="Hidden" Background="#FF294751" Margin="0,-21,0,19.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="61,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="841" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" TextDecorations="{x:Null}" Text="Свойства тупоугольного треугольника:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="628,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut3" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Content="Дальше" HorizontalAlignment="Left" Margin="1131,582,0,0" VerticalAlignment="Top" Width="155" Height="61" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="262" Margin="946,231,0,0" VerticalAlignment="Top" Width="357" Source="img/Тупоугольный1.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="61,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="933" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Против большей стороны лежит больший угол, и наоборот."/>
+            <TextBlock HorizontalAlignment="Left" Margin="61,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="810" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Против равных сторон лежат равные углы, и наоборот."/>
+            <TextBlock HorizontalAlignment="Left" Margin="61,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="841" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Сумма углов тупоугольного треугольника равна 180°."/>
+            <TextBlock HorizontalAlignment="Left" Margin="61,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="82" Width="810" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Любая сторона тупоугольного треугольника меньше суммы двух других сторон и больше их разности:"/>
+            <TextBlock HorizontalAlignment="Left" Margin="61,404,0,-12" TextWrapping="Wrap" VerticalAlignment="Top" Height="328" Width="135" FontSize="33" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="a &lt; b + c a &gt; b – c b &lt; a + c b &gt; a – c c &lt; a + b c &gt; a – b"/>
+        </Grid>
+        <Grid x:Name="TregGridRavnost" Visibility="Hidden" Background="#FF294751" Margin="-7,-21,7,20.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="220,185,0,0" TextWrapping="Wrap" Text="Равносторонний треугольник — треугольник, у которого все стороны равны." VerticalAlignment="Top" Height="149" Width="1002" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Равносторонний треугольник" HorizontalAlignment="Left" Margin="432,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="296,470,0,0" TextWrapping="Wrap" Text="Нарисуй равносторонний треугольник по вершинам." VerticalAlignment="Top" Height="46" Width="972" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut_Copy" Content="Начать" HorizontalAlignment="Left" Margin="531,551,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TregGridRavnostFinal" Visibility="Hidden" Background="#FF294751" Margin="0,-21,0,20.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="101" Width="992" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" TextDecorations="{x:Null}" Text="Свойства равностороннего треугольника:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut5"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1170,603,0,0" VerticalAlignment="Top" Width="147" Height="58" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="236" Margin="998,257,0,0" VerticalAlignment="Top" Width="275" Source="img/pngwing.com (1).png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="10,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="841" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Все углы равностороннего треугольника равны и равны 60°."/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="120" Width="902" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Медианы, биссектрисы и высоты равностороннего треугольника совпадают и равны."/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="232" Width="902" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Точка пересечения высот, биссектрис и медиан разделяется в отношении 2:1."/>
+        </Grid>
+        <Grid x:Name="TregGridRavnob" Visibility="Hidden" Background="#FF294751" Margin="0,-21,0,20.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="224,163,-54,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="173" Width="1190" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="Равнобедренным называется треугольник, у которого все стороны равны."/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Равнобедренный треугольник" HorizontalAlignment="Left" Margin="411,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="274,425,0,0" TextWrapping="Wrap" Text="Нарисуй равнобедренный треугольник по вершинам." VerticalAlignment="Top" Height="46" Width="1050" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut_Copy1" Content="Начать" HorizontalAlignment="Left" Margin="531,551,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TregGridRavnobFinal" Visibility="Hidden" Background="#FF294751" Margin="0,-21,0,20.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="68,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="828" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="Свойства равнобедренного треугольника:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="604,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut7" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1179,603,0,0" VerticalAlignment="Top" Width="140" Height="49" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="346" Margin="974,174,0,0" VerticalAlignment="Top" Width="237" Source="img/klipartz.com.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="68,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="136" Width="922" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- В равнобедренном треугольнике углы при основании равны."/>
+            <TextBlock HorizontalAlignment="Left" Margin="68,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="357" Width="922" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- В равнобедренном треугольнике высота, проведенная к основанию, является биссектрисой и медианой."/>
+            <TextBlock HorizontalAlignment="Left" Margin="68,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="188" Width="940" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Центры вписанной и описанной вокруг равнобедренного треугольника окружностей лежат на одном отрезке, являющимся биссектрисой, медианой и высотой, проведенной к основанию."/>
+        </Grid>
+        <Grid x:Name="PryamGrid" Visibility="Hidden" Background="#FF294751" Margin="0,0,-5,-0.3" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="80,160,0,0" TextWrapping="Wrap" Text="Прямоугольник – это четырехугольник, у которого все углы прямые, то есть равны 90 градусам." VerticalAlignment="Top" Height="146" Width="1218" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Прямоугольник" HorizontalAlignment="Left" Margin="531,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="301,430,0,0" TextWrapping="Wrap" Text="Нарисуй прямоугольник по вершинам." VerticalAlignment="Top" Height="80" Width="935" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut_Copy2" Content="Начать" HorizontalAlignment="Left" Margin="531,551,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="PryamGridFinal" Visibility="Hidden" Background="#FF294751" Margin="0,0,-10,-0.3" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="28,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="103" Width="760" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}" Text="Свойства прямоугольника:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="606,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut9"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1148,592,0,0" VerticalAlignment="Top" Width="160" Height="65" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="354" Margin="996,84,-43,0" VerticalAlignment="Top" Width="407" Source="img/pngwing.com (2).png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="22,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="914" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- У прямоугольника равны противоположные стороны."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="940" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- У прямоугольника противоположные стороны параллельны."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="72" Width="940" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- У прямоугольников все прилегающие друг к другу стороны пересекаются под прямыми углами. А в сумме они дают 360 градусов."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="766" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- У прямоугольников обе диагонали равны между собой."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="84" Width="1002" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- Диагональ прямоугольника делит фигуру ровно пополам, и в результате получаются два одинаковых прямоугольных треугольника."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="105" Width="1002" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- Диагонали прямоугольника пересекаются в его геометрическом центре. А их точка пересечения делит каждую диагональ на два равных отрезка. Более того, все четыре отрезка равны между собой."/>
+            <TextBlock HorizontalAlignment="Left" Margin="28,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="105" Width="1002" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" Cursor="Pen" TextDecorations="{x:Null}" Text="- У прямоугольника точка пересечения диагоналей является еще и центром описанной вокруг окружности. Причем длина диагонали одновременна является диаметром этой окружности."/>
+        </Grid>
+        <Grid x:Name="KvGrid" Visibility="Hidden" Background="#FF294751" Margin="0,-11,0,10.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="133,160,0,0" TextWrapping="Wrap" Text="Квадрат — правильный четырёхугольник, то есть четырёхугольник, у которого все углы равны и все стороны равны. Квадрат является одновременно частным случаем ромба и прямоугольника. Также является двумерным гиперкубом." VerticalAlignment="Top" Height="297" Width="1217" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Квадрат" HorizontalAlignment="Left" Margin="589,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="404,457,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="68" Width="580" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"><Run Text="Нарисуй квадрат "/><Run Text="по вершинам"/><Run Text="."/></TextBlock>
+            <Button x:Name="TregBut_Copy3" Content="Начать" HorizontalAlignment="Left" Margin="531,551,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="KvGridFinal" Visibility="Hidden" Background="#FF294751" Margin="0,-22,0,20.7" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="77,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="566" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" TextDecorations="{x:Null}" Text="Свойства квадрата:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="610,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut11"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Content="Дальше" HorizontalAlignment="Left" Margin="1159,610,0,0" VerticalAlignment="Top" Width="160" Height="57" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="167" Margin="1104,118,0,0" VerticalAlignment="Top" Width="176" Source="img/Квадрат1.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="77,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="1058" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Все углы квадрата — прямые, все стороны квадрата — равны."/>
+            <TextBlock HorizontalAlignment="Left" Margin="77,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="101" Width="648" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Диагонали квадрата равны и пересекаются под прямым углом."/>
+            <TextBlock HorizontalAlignment="Left" Margin="77,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="115" Width="664" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Диагонали квадрата делят его углы пополам."/>
+            <TextBlock HorizontalAlignment="Left" Margin="77,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="116" Width="632" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Площадь квадрата равна квадрату его стороны: S=a^2."/>
+            <TextBlock HorizontalAlignment="Left" Margin="77,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="81" Width="854" FontSize="30" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Диагональ квадрата равна произведению его стороны на √2, то есть d=√2 * a."/>
+            <Image HorizontalAlignment="Left" Height="167" Margin="722,240,0,0" VerticalAlignment="Top" Width="176" Source="img/Квадрат2.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image HorizontalAlignment="Left" Height="167" Margin="1034,390,0,0" VerticalAlignment="Top" Width="176" Source="img/Квадрат3.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+        <Grid x:Name="TrGrid" Visibility="Hidden" Background="#FF2A4751" Margin="0,0,0,-10.3" Width="1360">
+            <TextBlock HorizontalAlignment="Left" Margin="84,157,0,0" TextWrapping="Wrap" Text="Трапеция — выпуклый четырёхугольник, у которого две стороны параллельны, а две другие стороны не параллельны. Часто в определении трапеции опускают последнее условие. Параллельные противоположные стороны называются основаниями трапеции, а две другие — боковыми сторонами. " VerticalAlignment="Top" Height="266" Width="1276" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Трапеция" HorizontalAlignment="Left" Margin="590,0,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="391,524,0,0" TextWrapping="Wrap" Text="Нарисуй трапецию по вершинам." VerticalAlignment="Top" Height="46" Width="681" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut_Copy4" Content="Начать" HorizontalAlignment="Left" Margin="533,587,0,0" VerticalAlignment="Top" Width="326" Height="61"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TrGridFinal" Visibility="Hidden" Background="#FF2A4751" Margin="0,-1,0,-10.3" Width="1360">
+            <TextBlock HorizontalAlignment="Left" Margin="53,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="708" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" TextDecorations="{x:Null}" Text="Свойства трапеции:"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="615,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut13"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1182,606,0,0" VerticalAlignment="Top" Width="143" Height="55" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="290" Margin="937,281,0,0" VerticalAlignment="Top" Width="327" Source="img/klipartz.com (1).png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="22,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="79" Width="739" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- В трапецию можно вписать окружность, если сумма длин оснований равна сумме длин боковых сторон."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="739" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Средняя линия трапеции разделяет пополам любой отрезок, который соединяет основы, так же делит диагонали пополам."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="82" Width="754" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"><Run Text="- Средняя линия трапеции параллельна основаниям и равна их полусумме."/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="22,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="754" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Точка пересечения диагоналей трапеции и середины оснований лежат на одной прямой."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,452,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="739" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- В трапеции её боковая сторона видна из центра вписанной окружности под углом 90°."/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="109" Width="934" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"><Run Text="- Каждая диагональ в точке пересечения делится на две части с таким соотношением длины, как соотношение между основаниям."/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="22,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="109" Width="934" FontSize="24" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Параллелограмм - это частный вид трапеции. Но он не обладает всеми её свойствами. "/>
+        </Grid>
+        <Grid x:Name="TregGridOstr" Visibility="Hidden" Background="#FF2A4751" Margin="0,0,0,-0.3" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="235,159,0,0" TextWrapping="Wrap" Text="В остроугольном треугольнике каждый угол меньше 90 градусов. Но сумма углов в треугольнике всегда равна 180." VerticalAlignment="Top" Height="224" Width="1026" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}"/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="Остроугольный треугольник" HorizontalAlignment="Left" Margin="450,0,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="294,480,0,0" TextWrapping="Wrap" Text="Нарисуй остроугольный треугольник по вершинам." VerticalAlignment="Top" Height="74" Width="925" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" TextDecorations="{x:Null}"/>
+            <Button x:Name="TregBut14" Content="Начать"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  HorizontalAlignment="Left" Margin="588,570,0,0" VerticalAlignment="Top" Width="196" Height="59" Click="TregBut_Click"/>
+        </Grid>
+        <Grid x:Name="TregGridOstrFinal" Visibility="Hidden" Background="#FF2A4751" Margin="0,0,0,-0.3" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="27,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="899" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" TextDecorations="{x:Null}"><Run Text="Свойства "/><Run Text="остроугольного "/><Run Text="треугольника:"/></TextBlock>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="ВЕРНО!" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut15"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1152,606,0,0" VerticalAlignment="Top" Width="164" Height="58" Click="TregBut11_Click"/>
+            <Image HorizontalAlignment="Left" Height="236" Margin="1029,260,0,0" VerticalAlignment="Top" Width="275" Source="img/kisspng-acute-and-obtuse-triangles-internal-angle-right-tr-triangles-5ac08c6153da53.7419382715225682893435.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.26"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="27,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="58" Width="969" FontSize="33" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Против большей стороны лежит больший угол, и наоборот."/>
+            <TextBlock HorizontalAlignment="Left" Margin="27,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="969" FontSize="33" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Против равных сторон лежат равные углы, и наоборот."/>
+            <TextBlock HorizontalAlignment="Left" Margin="27,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="61" Width="988" FontSize="33" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Сумма углов остроугольного треугольника равна 180°."/>
+            <TextBlock HorizontalAlignment="Left" Margin="27,452,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="988" FontSize="33" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" TextDecorations="{x:Null}" Text="- Любая сторона остроугольного треугольника меньше суммы двух других сторон и больше их разности."/>
+        </Grid>
+        <Grid x:Name="GridError" Visibility="Hidden" Background="#FF2A4751" Margin="0,0,0,-0.3" Width="1360" Height="719.5">
+            <TextBlock HorizontalAlignment="Left" Margin="351,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="899" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="White" Cursor="Pen" TextDecorations="{x:Null}" Text="Будь внимательнее в следующий раз."/>
+            <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="69" Stroke="Black" VerticalAlignment="Top" Width="1360"/>
+            <Label Content="НЕ ВЕРНО :(" HorizontalAlignment="Left" Margin="614,10,0,0" VerticalAlignment="Top" FontFamily="/Corners;component/text/#Rostov" FontSize="36" Foreground="#FFF1F3F7" Background="{x:Null}"/>
+            <Button x:Name="TregBut16"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  Content="Дальше" HorizontalAlignment="Left" Margin="1152,606,0,0" VerticalAlignment="Top" Width="164" Height="58" Click="TregBut11_Click"/>
+            <TextBlock x:Name="TBPrTreg" Visibility="Hidden" HorizontalAlignment="Left" Margin="126,267,0,0" TextWrapping="Wrap" Text="Треугольник называют прямоугольным, если у него есть прямой угол. Прямоугольный треугольник имеет две взаимно перпендикулярные стороны, называемые катетами; третья его сторона называется гипотенузой." VerticalAlignment="Top" Height="199" Width="1124" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+            <TextBlock x:Name="TBTup" Visibility="Hidden" HorizontalAlignment="Left" Margin="58,267,0,0" TextWrapping="Wrap" Text="Тупоугольный треугольник – это треугольник, у которого один угол тупой, а два других – острые. В свою очередь, тупой угол – это угол, градусная мера которого составляет 90° до 180°, а острый угол – это угол, градусная мера которого составляет менее 90 градусов" VerticalAlignment="Top" Height="233" Width="1292" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+            <TextBlock x:Name="TBRavnost" Visibility="Hidden" HorizontalAlignment="Left" Margin="199,267,0,0" TextWrapping="Wrap" Text="Равносторонний треугольник — треугольник, у которого все стороны равны." VerticalAlignment="Top" Height="149" Width="1002" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+            <TextBlock x:Name="TBRavn" Visibility="Hidden" HorizontalAlignment="Left" Margin="199,267,-29,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="173" Width="1190" FontSize="48" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}" Text="Равнобедренным называется треугольник, у которого все стороны равны."/>
+            <TextBlock x:Name="TBPr" Visibility="Hidden"  HorizontalAlignment="Left" Margin="98,251,0,0" TextWrapping="Wrap" Text="Прямоугольник – это четырехугольник, у которого все углы прямые, то есть равны 90 градусам." VerticalAlignment="Top" Height="350" Width="1218" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"  />
+            <TextBlock x:Name="TBKv" Visibility="Hidden" HorizontalAlignment="Left" Margin="99,213,0,0" TextWrapping="Wrap" Text="Квадрат — правильный четырёхугольник, то есть четырёхугольник, у которого все углы равны и все стороны равны. Квадрат является одновременно частным случаем ромба и прямоугольника. Также является двумерным гиперкубом." VerticalAlignment="Top" Height="297" Width="1217" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+            <TextBlock x:Name="TBOstr" HorizontalAlignment="Left" Visibility="Hidden" Margin="224,267,0,0" TextWrapping="Wrap" Text="В остроугольном треугольнике каждый угол меньше 90 градусов. Но сумма углов в треугольнике всегда равна 180." VerticalAlignment="Top" Height="224" Width="1026" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+            <TextBlock x:Name="TBTr" Visibility="Hidden" HorizontalAlignment="Left" Margin="84,223,0,0" TextWrapping="Wrap" Text="Трапеция — выпуклый четырёхугольник, у которого две стороны параллельны, а две другие стороны не параллельны. Часто в определении трапеции опускают последнее условие. Параллельные противоположные стороны называются основаниями трапеции, а две другие — боковыми сторонами. " VerticalAlignment="Top" Height="413" Width="1276" FontSize="36" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF020817" Cursor="Pen" TextDecorations="{x:Null}"/>
+        </Grid>
+        <Grid x:Name="GridAllFinal" Visibility="Hidden" Background="#FF2A4751" Margin="0,0,7,8.7" Width="1360" Height="719.5">
+            <Label x:Name="LBTIME" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Height="90" Width="1254" FontSize="36" Background="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1"/>
+            <Label Content="Все уровни пройдены" Margin="368,10,207,590.3" FontSize="65" FontFamily="/Corners;component/text/#Rostov" Foreground="White"/>
+            <Button Content="В меню"  Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/Corners;component/text/#Rostov" Foreground="#FF5ABEE1" FontSize="20"  HorizontalAlignment="Left" Margin="581,600,0,0" VerticalAlignment="Top" Width="225" Height="60" Click="Button_Click_1"/>
+
+            <lvc:PieChart Name="pipChart" LegendLocation="Bottom" Hoverable="False"
+                          DataTooltip="{x:Null}" Margin="388,206,359,159.3" DataClick="pipChart_DataClick">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="Правильно"   LabelPoint="{Binding PointLabel}" Values="3">
+                        <lvc:PieSeries.Fill>
+                            <SolidColorBrush Color="#FF158910" Opacity="1"/>
+                        </lvc:PieSeries.Fill>
+                    </lvc:PieSeries>
+                    <lvc:PieSeries Title="Неправильно"  LabelPoint="{Binding PointLabel}" Values="4">
+                        <lvc:PieSeries.Fill>
+                            <SolidColorBrush Color="#FF891010" Opacity="1"/>
+                        </lvc:PieSeries.Fill>
+                    </lvc:PieSeries>
+
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+C:\Users\Diana\source\repos\Arifm\Arifm\bin\Debug\netstandard2.0\Arifm.deps.json
+C:\Users\Diana\source\repos\Arifm\Arifm\bin\Debug\netstandard2.0\Arifm.dll
+C:\Users\Diana\source\repos\Arifm\Arifm\bin\Debug\netstandard2.0\Arifm.pdb
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.csprojAssemblyReference.cache
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.AssemblyInfoInputs.cache
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.AssemblyInfo.cs
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.csproj.CoreCompileInputs.cache
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.dll
+C:\Users\Diana\source\repos\Arifm\Arifm\obj\Debug\netstandard2.0\Arifm.pdb

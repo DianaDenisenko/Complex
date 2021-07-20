@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arifm", "Arifm\Arifm.csproj", "{363EB58D-8A1D-4694-A9A1-D6E875D7BBDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{AC5A7936-2A40-4499-A88C-AE109BDD355C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{363EB58D-8A1D-4694-A9A1-D6E875D7BBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363EB58D-8A1D-4694-A9A1-D6E875D7BBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363EB58D-8A1D-4694-A9A1-D6E875D7BBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363EB58D-8A1D-4694-A9A1-D6E875D7BBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5A7936-2A40-4499-A88C-AE109BDD355C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5A7936-2A40-4499-A88C-AE109BDD355C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5A7936-2A40-4499-A88C-AE109BDD355C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5A7936-2A40-4499-A88C-AE109BDD355C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05458927-E0A3-4880-B8D7-2500CEE5887D}
+	EndGlobalSection
+EndGlobal

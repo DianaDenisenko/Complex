@@ -1,0 +1,511 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ГлОкно"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    x:Class="ГлОкно.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="608" Width="1084" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Activated="Window_Activated">
+    <Grid Background="#FF142328">
+        <Rectangle Fill="#FF09181D" HorizontalAlignment="Left" Height="608" VerticalAlignment="Top" Width="79"/>
+        <Label Content="Выход" HorizontalAlignment="Left" Margin="0,543,0,0" VerticalAlignment="Top" Width="82" FontSize="20" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" Height="37" MouseDown="Label_MouseDown_1" RenderTransformOrigin="0.5,0.5" Background="#FF142328">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.263"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.662"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+        <Label Content="👥" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="53" FontSize="36" Foreground="#FF0499A8" Height="56" MouseDown="Label_MouseDown"/>
+        <Label Content="Аккаунт" HorizontalAlignment="Left" Margin="7,131,0,0" VerticalAlignment="Top" Width="67" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28"/>
+        <Rectangle Fill="#FF15282E" HorizontalAlignment="Left" Height="36" Margin="79,0,0,0" VerticalAlignment="Top" Width="1005"/>
+        <Label x:Name="NameFam" Content="Имя Фамилия" HorizontalAlignment="Left" Margin="82,1,0,0" VerticalAlignment="Top" Foreground="#FF224653" FontWeight="Bold" Height="28" Width="309" FontSize="14"/>
+        <Grid x:Name="MainGrid" Visibility="Hidden" HorizontalAlignment="Left" Height="571" Margin="84,41,0,0" VerticalAlignment="Top" Width="992">
+            <lvc:PieChart x:Name="pipChartt" LegendLocation="Bottom" Hoverable="False"   DataTooltip="{x:Null}" Margin="92,333,655,32" DataClick="pipChart_DataClick"/>
+            <TextBlock HorizontalAlignment="Left" Margin="15,293,0,0" TextWrapping="Wrap" Text="Последний результат в игре &quot;Фигуры&quot;:" VerticalAlignment="Top" Height="35" Width="380" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="20"/>
+            <Image x:Name="MainIMG" HorizontalAlignment="Left" Height="145" Margin="31,22,0,0" VerticalAlignment="Top" Width="135" Source="Res/d1cbaae7-79df-4b31-884f-3694e64f514a-profile_image-300x300.png">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10"/>
+                </Image.Effect>
+            </Image>
+            <Label x:Name="MainNameFam" Content="Имя Фамилия" HorizontalAlignment="Left" Margin="184,22,0,0" VerticalAlignment="Top" Foreground="#FFACABAB" FontSize="24" FontFamily="/ГлОкно;component/Res/#Rostov" Width="650"/>
+            <Button x:Name="Settings" Content="⚙" HorizontalAlignment="Left" Margin="189,104,0,0" VerticalAlignment="Top" Width="33" Height="32" Background="#FF1A2C32" BorderBrush="{x:Null}" Padding="0,4" RenderTransformOrigin="0.5,0.5" FontSize="18" Foreground="#FF4C9498" Click="Settings_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.285"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.162"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}" >
+                        <Border x:Name="border"   BorderBrush="{TemplateBinding BorderBrush}"   Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="15">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0"
+                                    Opacity="1"
+                                    BlurRadius="6" Color="#FF1F363E"/>
+                            </Border.Effect>
+
+                            <ContentPresenter      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground"   Value="#FF694242"/>
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="TextBlock.Foreground" Value="#FF632C2C"/>
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="EnterBut1_Copy" Content="Изменить фото" HorizontalAlignment="Left" Margin="15,172,0,0" VerticalAlignment="Top" Width="169" Height="35" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="EnterBut_Click"/>
+            <Grid x:Name="GridEdit" Visibility="Hidden" HorizontalAlignment="Left" Height="381" Margin="184,21,0,0" VerticalAlignment="Top" Width="606" Background="#FF09181D">
+                <Grid.Effect>
+                    <DropShadowEffect Color="#FF3E3A3A" BlurRadius="10"/>
+                </Grid.Effect>
+                <TextBox x:Name="Editname"  HorizontalAlignment="Left"    Height="39" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <Label Content="Имя" HorizontalAlignment="Left" Margin="345,10,-146,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="79" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <Label Content="Фамилия" HorizontalAlignment="Left" Margin="345,74,-224,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="157" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <Label Content="Отчество" HorizontalAlignment="Left" Margin="345,134,-215,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="148" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <TextBox x:Name="Editfam" HorizontalAlignment="Left"    Height="39" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <TextBox x:Name="Edditotch" HorizontalAlignment="Left"    Height="39" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov" PreviewTextInput="TBNAME_PreviewTextInput"/>
+                <Label Content="Класс" HorizontalAlignment="Left" Margin="345,184,-166,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="99"/>
+                <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="345,245,0,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="256"/>
+                <TextBox x:Name="Editclass" HorizontalAlignment="Left"    Height="39" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov" PreviewTextInput="TBCLASS_PreviewTextInput"/>
+                <DatePicker x:Name="Editdate"  Style="{x:Null}" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Height="40" Width="317" Foreground="#FFACA2A3" FontWeight="Bold" BorderBrush="#FFABADB3" Background="{x:Null}" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov">
+                    <DatePicker.Resources>
+
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="IsReadOnly" Value="True"/>
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Black"/>
+
+                            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FF080606"/>
+                                            </Grid.Resources>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver"/>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="WatermarkStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Unwatermarked"/>
+                                                    <VisualState x:Name="Watermarked">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="FocusStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Unfocused"/>
+                                                    <VisualState x:Name="Focused">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
+
+                                                <Grid x:Name="WatermarkContent"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                    <Border x:Name="ContentElement" BorderBrush="{x:Null}" BorderThickness="1" Visibility="Hidden"/>
+                                                    <Border x:Name="watermark_decorator" BorderBrush="{x:Null}" BorderThickness="0" Visibility="Visible">
+                                                        <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="True" Opacity="0" Padding="2"/>
+                                                    </Border>
+
+
+                                                    <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Style>
+
+                    </DatePicker.Resources>
+
+                </DatePicker>
+                <Button x:Name="EnterBut1_Copy1" Content="✓" HorizontalAlignment="Left" Margin="533,320,0,0" VerticalAlignment="Top" Width="63" Height="48" Background="#FF142328" BorderBrush="#FF0A1114" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABED1" FontSize="28" Click="EnterBut1_Copy1_Click"/>
+                <Button x:Name="EnterBut1_Copy2" Content="✗" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top" Width="63" Height="48" Background="#FF142328" BorderBrush="#FF0A1114" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABED1" FontSize="28" Click="EnterBut1_Copy2_Click"/>
+            </Grid>
+            <Button x:Name="EnterBut1_Copy3" Content="Удалить фото" HorizontalAlignment="Left" Margin="15,212,0,0" VerticalAlignment="Top" Width="169" Height="35" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="EnterBut1_Copy3_Click"/>
+            <Button x:Name="Button_For_Prepod" Content="Конфигуратор тестов" HorizontalAlignment="Left" Margin="737,10,0,0" VerticalAlignment="Top" Width="245" Height="35" Background="#FF09181D" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABEE1" FontSize="20" Click="Button_For_Prepod_Click"/>
+        </Grid>
+        <Label Content="📊" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top" Width="64" FontSize="36" Foreground="#FF0499A8" Height="56" MouseDown="Label_MouseDown_4"/>
+        <Label Content="Статистика" HorizontalAlignment="Left" Margin="-3,354,0,0" VerticalAlignment="Top" Width="82" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28"/>
+        <Label Content="📜" HorizontalAlignment="Left" Margin="10,418,0,0" VerticalAlignment="Top" Width="61" FontSize="36" Foreground="#FF0499A8" Height="56" MouseDown="Label_MouseDown_5"/>
+        <Label Content="Тесты" HorizontalAlignment="Left" Margin="15,474,0,0" VerticalAlignment="Top" Width="48" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28"/>
+        <Label Content="🎮" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Width="64" FontSize="36" Foreground="#FF0499A8" Height="56" MouseDown="Label_MouseDown_2"/>
+        <Label Content="Мини-игры" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Width="82" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28"/>
+        <Grid x:Name="MiniGames" Visibility ="Hidden" HorizontalAlignment="Left" Height="541" Margin="82,36,0,0" VerticalAlignment="Top" Width="994">
+            <Image HorizontalAlignment="Left" Height="100" Margin="89,39,0,0" VerticalAlignment="Top" Width="100" Source="Res/d1cbaae7-79df-4b31-884f-3694e64f514a-profile_image-300x300.png" MouseDown="Image_MouseDown_1"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="274,39,0,0" VerticalAlignment="Top" Width="100" Source="Res/d1cbaae7-79df-4b31-884f-3694e64f514a-profile_image-300x300.png" MouseDown="Image_MouseDown"/>
+            <Label Content="Выбери свой путь" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28" Margin="73,144,0,0"/>
+            <Label Content="Кот" HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28" Margin="307,144,0,0"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="437,39,0,0" VerticalAlignment="Top" Width="100" Source="Res/d1cbaae7-79df-4b31-884f-3694e64f514a-profile_image-300x300.png" MouseDown="Image_MouseDown_2"/>
+            <Label Content="Углы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="52" FontSize="14" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" Height="28" Margin="471,144,0,0"/>
+        </Grid>
+        <Grid x:Name="Authorization" Visibility="Hidden" HorizontalAlignment="Left" Height="608" VerticalAlignment="Top" Width="1084" Background="#FF142328">
+            <PasswordBox x:Name="AUTOPASS" HorizontalAlignment="Left"    Height="44" Margin="451,322,0,0"   VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" BorderBrush="#FFABADB3"/>
+            <TextBox x:Name="AUTOLOG" HorizontalAlignment="Left"    Height="46" Margin="451,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25"/>
+            <Label Content="Логин" HorizontalAlignment="Left" Margin="297,202,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Пароль" HorizontalAlignment="Left" Margin="297,316,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Авторизация" HorizontalAlignment="Left" Margin="341,32,0,0" VerticalAlignment="Top" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="72" Foreground="White"/>
+            <TextBlock   HorizontalAlignment="Left" Margin="492,490,0,0" TextWrapping="Wrap" Text="Зарегистрироваться" VerticalAlignment="Top"  TextDecorations="Underline" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov" Width="285" MouseDown="TextBlock_MouseDown">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Foreground" Value="#FFE0E6E7"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#FF333F47"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button x:Name="EnterBut" Content="Войти" HorizontalAlignment="Left" Margin="451,393,0,0" VerticalAlignment="Top" Width="347" Height="68" Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" Click="EnterBut_Click_1"/>
+
+
+        </Grid>
+        <Grid x:Name="Registration" Visibility="Hidden" HorizontalAlignment="Left" Height="608" VerticalAlignment="Top" Width="1084" Background="#FF142328">
+            <TextBox x:Name="TBNAME"  HorizontalAlignment="Left"    Height="46" Margin="298,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" PreviewTextInput="TBNAME_PreviewTextInput"/>
+            <Label Content="Имя" HorizontalAlignment="Left" Margin="677,148,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="677,224,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Регистрация" HorizontalAlignment="Left" Margin="335,29,0,0" VerticalAlignment="Top" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="72" Foreground="White"/>
+            <Label Content="Отчество" HorizontalAlignment="Left" Margin="677,295,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <TextBox x:Name="TBFAM" HorizontalAlignment="Left"    Height="46" Margin="298,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" PreviewTextInput="TBNAME_PreviewTextInput"/>
+            <TextBox x:Name="TBOTCH" HorizontalAlignment="Left"    Height="46" Margin="298,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" PreviewTextInput="TBNAME_PreviewTextInput"/>
+            <Label x:Name="LBCL" Content="Класс" HorizontalAlignment="Left" Margin="677,354,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="677,413,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <TextBox x:Name="TBCLASS" HorizontalAlignment="Left"    Height="46" Margin="298,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" PreviewTextInput="TBCLASS_PreviewTextInput"/>
+            <DatePicker x:Name="TBDATE"  Style="{x:Null}" HorizontalAlignment="Left" Margin="298,424,0,0" VerticalAlignment="Top" Height="38" Width="349" Foreground="#FFACA2A3" FontWeight="Bold" BorderBrush="#FFABADB3" Background="{x:Null}" FontSize="22">
+                <DatePicker.Resources>
+
+                    <Style TargetType="{x:Type DatePickerTextBox}">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="Black"/>
+
+                        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                    <Grid>
+                                        <Grid.Resources>
+                                            <SolidColorBrush x:Key="WatermarkBrush" Color="#FF080606"/>
+                                        </Grid.Resources>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualStateGroup.Transitions>
+                                                    <VisualTransition GeneratedDuration="0"/>
+                                                    <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                </VisualStateGroup.Transitions>
+                                                <VisualState x:Name="Normal"/>
+                                                <VisualState x:Name="MouseOver"/>
+                                            </VisualStateGroup>
+                                            <VisualStateGroup x:Name="WatermarkStates">
+                                                <VisualStateGroup.Transitions>
+                                                    <VisualTransition GeneratedDuration="0"/>
+                                                </VisualStateGroup.Transitions>
+                                                <VisualState x:Name="Unwatermarked"/>
+                                                <VisualState x:Name="Watermarked">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                            <VisualStateGroup x:Name="FocusStates">
+                                                <VisualStateGroup.Transitions>
+                                                    <VisualTransition GeneratedDuration="0"/>
+                                                </VisualStateGroup.Transitions>
+                                                <VisualState x:Name="Unfocused"/>
+                                                <VisualState x:Name="Focused">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+
+                                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
+
+                                            <Grid x:Name="WatermarkContent"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                <Border x:Name="ContentElement" BorderBrush="{x:Null}" BorderThickness="1" Visibility="Hidden"/>
+                                                <Border x:Name="watermark_decorator" BorderBrush="{x:Null}" BorderThickness="0" Visibility="Visible">
+                                                    <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="True" Opacity="0" Padding="2"/>
+                                                </Border>
+
+
+                                                <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+
+                    </Style>
+
+                </DatePicker.Resources>
+
+            </DatePicker>
+            <Button x:Name="EnterBut_Copy" Content="Назад" HorizontalAlignment="Left" Margin="27,29,0,0" VerticalAlignment="Top" Width="181" Height="55" Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" Click="EnterBut_Copy_Click"/>
+            <Button x:Name="EnterBut_Copy1" Content="Готово" HorizontalAlignment="Left" Margin="885,511,0,0" VerticalAlignment="Top" Width="181" Height="55" Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" Click="EnterBut_Copy1_Click"/>
+            <Button x:Name="WHO"   Background="#FF03151B" Content="Преподаватель" HorizontalAlignment="Left" Margin="843,45,0,0" VerticalAlignment="Top" Width="207" Height="39" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="24" BorderBrush="{x:Null}" Click="WHO_Click"/>
+        </Grid>
+        <Grid x:Name="Registration1" Visibility="Hidden" HorizontalAlignment="Left" Height="608" VerticalAlignment="Top" Width="1084" Background="#FF142328" Margin="0,1,0,-1">
+            <TextBox x:Name="REGLOG" HorizontalAlignment="Left"    Height="46" Margin="298,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25"/>
+            <Label Content="Логин" HorizontalAlignment="Left" Margin="677,226,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Пароль" HorizontalAlignment="Left" Margin="677,350,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="36"/>
+            <Label Content="Регистрация" HorizontalAlignment="Left" Margin="335,29,0,0" VerticalAlignment="Top" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="72" Foreground="White"/>
+            <Button x:Name="EnterBut_Copy2" Content="Назад" HorizontalAlignment="Left" Margin="27,29,0,0" VerticalAlignment="Top" Width="181" Height="55" Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" Click="EnterBut_Copy2_Click"/>
+            <Button x:Name="EnterBut_Copy3" Content="Готово" HorizontalAlignment="Left" Margin="885,511,0,11" Width="181" Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" Click="EnterBut_Copy3_Click"/>
+            <PasswordBox x:Name="REGPASS" HorizontalAlignment="Left"    Height="44" Margin="298,358,0,0"   VerticalAlignment="Top" Width="349" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="25" BorderBrush="#FFABADB3"/>
+        </Grid>
+        <Grid x:Name="ToolBar" Background="Transparent" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1000" MouseDown="ToolBar_MouseDown" Margin="84,7,0,0">
+            <Image x:Name="closer" HorizontalAlignment="Left" Height="12" Margin="976,8,0,0" VerticalAlignment="Top" Width="16" MouseDown="closer_MouseDown" RenderTransformOrigin="0.706,0.542" Source="Res/крест.png">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Res/крест.png"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Source" Value="Res/тире.png"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image x:Name="remover" HorizontalAlignment="Left" Height="9" Margin="945,8,0,0" VerticalAlignment="Top" Width="16" MouseDown="remover_MouseDown" RenderTransformOrigin="2,0.556" Source="Res/тире.png">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Res/тире.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Source" Value="Res/тиренаведение.png"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Label Content="🛈" HorizontalAlignment="Left" Margin="896,-2,0,0" VerticalAlignment="Top" Foreground="#FF224653" FontSize="22" Height="26" Width="19" Padding="0" MouseDown="Label_MouseDown_3"/>
+            <Separator HorizontalAlignment="Left" Height="36" Margin="908,-7,0,-7" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.5,0.5" Background="#FF224653">
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.86"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+
+        </Grid>
+        <Grid x:Name="StatGrid" Visibility="Hidden" HorizontalAlignment="Left" Height="571" Margin="84,41,0,-4" VerticalAlignment="Top" Width="992" Background="#FF142328">
+            <lvc:PieChart x:Name="pipChartt1" LegendLocation="Bottom" Hoverable="False"
+                DataTooltip="{x:Null}" Margin="-1024,348,1771,17" DataClick="pipChart_DataClick"/>
+            <Grid x:Name="GridEdit1" Visibility="Hidden" HorizontalAlignment="Left" Height="381" Margin="184,21,0,0" VerticalAlignment="Top" Width="606" Background="#FF09181D">
+                <Grid.Effect>
+                    <DropShadowEffect Color="#FF3E3A3A" BlurRadius="10"/>
+                </Grid.Effect>
+                <TextBox x:Name="Editname1"  HorizontalAlignment="Left"    Height="39" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov"/>
+                <Label Content="Имя" HorizontalAlignment="Left" Margin="345,10,-146,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="79"/>
+                <Label Content="Фамилия" HorizontalAlignment="Left" Margin="345,74,-224,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="157"/>
+                <Label Content="Отчество" HorizontalAlignment="Left" Margin="345,134,-215,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="148"/>
+                <TextBox x:Name="Editfam1" HorizontalAlignment="Left"    Height="39" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov"/>
+                <TextBox x:Name="Edditotch1" HorizontalAlignment="Left"    Height="39" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov"/>
+                <Label Content="Класс" HorizontalAlignment="Left" Margin="345,184,-166,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="99"/>
+                <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="345,245,0,0" VerticalAlignment="Top" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="28" Height="50" Width="256"/>
+                <TextBox x:Name="Editclass1" HorizontalAlignment="Left"    Height="39" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Background="{x:Null}" Foreground="#FFE0E6E7" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov"/>
+                <DatePicker x:Name="Editdate1"  Style="{x:Null}" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Height="40" Width="317" Foreground="#FFACA2A3" FontWeight="Bold" BorderBrush="#FFABADB3" Background="{x:Null}" FontSize="28" FontFamily="/ГлОкно;component/Res/#Rostov">
+                    <DatePicker.Resources>
+
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="IsReadOnly" Value="True"/>
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Black"/>
+
+                            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FF080606"/>
+                                            </Grid.Resources>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver"/>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="WatermarkStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Unwatermarked"/>
+                                                    <VisualState x:Name="Watermarked">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Watermark"/>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="FocusStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Unfocused"/>
+                                                    <VisualState x:Name="Focused">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual"/>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1" Padding="{TemplateBinding Padding}">
+
+                                                <Grid x:Name="WatermarkContent"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                    <Border x:Name="ContentElement" BorderBrush="{x:Null}" BorderThickness="1" Visibility="Hidden"/>
+                                                    <Border x:Name="watermark_decorator" BorderBrush="{x:Null}" BorderThickness="0" Visibility="Visible">
+                                                        <ContentControl x:Name="PART_Watermark" Focusable="False" IsHitTestVisible="True" Opacity="0" Padding="2"/>
+                                                    </Border>
+
+
+                                                    <ScrollViewer x:Name="PART_ContentHost" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" IsHitTestVisible="False" Opacity="0"/>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Style>
+
+                    </DatePicker.Resources>
+
+                </DatePicker>
+                <Button x:Name="EnterBut1_Copy5" Content="✓" HorizontalAlignment="Left" Margin="533,320,0,0" VerticalAlignment="Top" Width="63" Height="48" Background="#FF142328" BorderBrush="#FF0A1114" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABED1" FontSize="28" Click="EnterBut1_Copy1_Click"/>
+                <Button x:Name="EnterBut1_Copy6" Content="✗" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top" Width="63" Height="48" Background="#FF142328" BorderBrush="#FF0A1114" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF5ABED1" FontSize="28" Click="EnterBut1_Copy2_Click"/>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="-1101,308,0,0" TextWrapping="Wrap" Text="Последний результат в игре &quot;Фигуры&quot;:" VerticalAlignment="Top" Height="35" Width="380" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="-571,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="380" Foreground="#FF5ABEE1" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="20"><Run Text="Последний пройденный тест"/><Run Text=":"/></TextBlock>
+            <lvc:PieChart x:Name="pipChartt_Copy1" LegendLocation="Bottom" Hoverable="False"
+                DataTooltip="{x:Null}" Margin="-571,348,1318,17" DataClick="pipChart_DataClick"/>
+            <Button Content="Фигуры"  Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" HorizontalAlignment="Left" Margin="68,95,0,0" VerticalAlignment="Top" Width="858" Height="86" Click="Button_Click_2">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="Облака"  Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" HorizontalAlignment="Left" Margin="68,221,0,0" VerticalAlignment="Top" Width="858" Height="83" Click="Button_Click_3">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="Тесты"  Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="36" HorizontalAlignment="Left" Margin="68,346,0,0" VerticalAlignment="Top" Width="858" Height="90" Click="Button_Click_4">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Grid x:Name="FigStat" Visibility="Visible" HorizontalAlignment="Left" Height="571" Margin="84,37,0,0" VerticalAlignment="Top" Width="992" Background="#FF142328">
+            <lvc:CartesianChart x:Name="Chart" Zoom="Xy"   Margin="201,179,166,65">
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Visibility="Hidden"/>
+                </lvc:CartesianChart.AxisY>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Visibility="Hidden"/>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.Series>
+                    <lvc:LineSeries Values="0,0,5,3,10" Fill="Transparent" StrokeThickness="4" 
+                                Panel.ZIndex="2" PointGeometrySize="25"/>
+                </lvc:CartesianChart.Series>
+            </lvc:CartesianChart>
+            <DatePicker x:Name="PDF1" HorizontalAlignment="Left" Margin="295,83,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="PDF2" HorizontalAlignment="Left" Margin="473,83,0,0" VerticalAlignment="Top"/>
+            <Button Content="Построить"  Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="22" HorizontalAlignment="Left" Margin="620,77,0,0" VerticalAlignment="Top" Width="140" Height="30" Click="Button_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Label Content="От" HorizontalAlignment="Left" Margin="250,84,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16"/>
+            <Label Content="До" HorizontalAlignment="Left" Margin="430,83,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16"/>
+            <Label Content="(Количество правильных ответов)" HorizontalAlignment="Left" Margin="16,141,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="77" Width="325"/>
+            <Label Content="(Количество сыгранных игр)" HorizontalAlignment="Left" Margin="396,512,0,-17" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="76" Width="262"/>
+            <Label Content="Для просмотра даты выберите нужную линию данных" HorizontalAlignment="Left" Margin="528,141,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="77" Width="430"/>
+        </Grid>
+        <Grid x:Name="KitStat" Visibility="Visible" HorizontalAlignment="Left" Height="571" Margin="84,37,0,0" VerticalAlignment="Top" Width="992" Background="#FF142328">
+            <lvc:CartesianChart x:Name="Chart1" Zoom="Xy"   Margin="201,179,166,65">
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Visibility="Hidden"/>
+                </lvc:CartesianChart.AxisY>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Visibility="Hidden"/>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.Series>
+                    <lvc:LineSeries Values="0,0,5,3,10" Fill="Transparent" StrokeThickness="4" 
+                        Panel.ZIndex="2" PointGeometrySize="25"/>
+                </lvc:CartesianChart.Series>
+            </lvc:CartesianChart>
+           
+            <DatePicker x:Name="PDF3" HorizontalAlignment="Left" Margin="295,83,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="PDF4" HorizontalAlignment="Left" Margin="473,83,0,0" VerticalAlignment="Top"/>
+            <Button Content="Построить"  Background="#FF03151B" BorderBrush="{x:Null}" FontFamily="/ГлОкно;component/Res/#Rostov" Foreground="#FF0499A8" FontSize="22" HorizontalAlignment="Left" Margin="620,77,0,0" VerticalAlignment="Top" Width="140" Height="30" Click="Button_Click_1">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Label Content="От" HorizontalAlignment="Left" Margin="250,84,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16"/>
+            <Label Content="До" HorizontalAlignment="Left" Margin="430,83,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16"/>
+            <Label Content="(Количество решенных примеров)" HorizontalAlignment="Left" Margin="16,141,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="77" Width="263"/>
+            <Label Content="(Количество сыгранных игр)" HorizontalAlignment="Left" Margin="396,512,0,-17" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="76" Width="262"/>
+            <Label Content="Для просмотра даты выберите нужную линию данных" HorizontalAlignment="Left" Margin="528,141,0,0" VerticalAlignment="Top" Foreground="#FF0499A8" FontFamily="/ГлОкно;component/Res/#Rostov" FontSize="16" Height="77" Width="430"/>
+        </Grid>
+
+    </Grid>
+</Window>

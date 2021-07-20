@@ -1,0 +1,57 @@
+﻿<Window x:Class="СканКартинки.Tests"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:СканКартинки"
+        mc:Ignorable="d"
+        Title="Tests" Width="1377.091" Height="720.714" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF142328">
+    <Grid x:Name="G3">
+        <Grid x:Name="G1" d:IsHidden="False">
+            <TextBlock x:Name="TB1" HorizontalAlignment="Left"  Text="" FontSize="24" Margin="135,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="210" Width="1099" Foreground="White"/>
+            <Label x:Name="L1" Content="Вопрос" HorizontalAlignment="Left" FontSize="30" HorizontalContentAlignment="Center" Margin="370,29,0,0" VerticalAlignment="Top" Height="62" Width="658" Foreground="White"/>
+            <Button Content="Выйти" FontSize="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Height="48" Background="{x:Null}" BorderBrush="White" BorderThickness="3" Foreground="White" Click="Button_Click_2"/>
+            <Button FontSize="28" HorizontalAlignment="Left" Margin="0,584,0,0" VerticalAlignment="Top" Width="146" Height="96" BorderThickness="3" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1">
+                <Button.Background>
+                    <ImageBrush ImageSource="icons8-назад-96.png"/>
+                </Button.Background>
+            </Button>
+            <Button FontSize="28" HorizontalAlignment="Left" Margin="1202,584,0,0" VerticalAlignment="Top" Width="146" Height="96" BorderThickness="3" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="Button_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="icons8-назад-96.png"/>
+                </Button.Background>
+            </Button>
+            <CheckBox x:Name="CB1" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,416,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <CheckBox x:Name="CB2" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,461,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <CheckBox x:Name="CB3" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,506,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <CheckBox x:Name="CB4" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,551,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <CheckBox x:Name="CB5" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,595,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+
+            <RadioButton x:Name="RB1" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,416,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <RadioButton x:Name="RB2" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,461,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <RadioButton x:Name="RB3" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,506,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <RadioButton x:Name="RB4" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,551,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+            <RadioButton x:Name="RB5" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="20 0 0 0" Margin="178,595,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="1013" Height="40"/>
+
+
+            <Grid x:Name="G2"/>
+
+        </Grid>
+
+
+        <Grid x:Name="G4" Margin="263,49,263,63" Visibility="Hidden">
+            <Grid x:Name="G5" HorizontalAlignment="Left" Height="271" Margin="267,73,0,0" VerticalAlignment="Top" Width="309"/>
+            <Button Content="Выйти" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="341,0,353,32" Width="149" Height="48" Background="{x:Null}" BorderBrush="White" BorderThickness="3" Foreground="White" Click="Button_Click_2"/>
+            <Label x:Name="L1_Copy" Content="Результаты теста:" HorizontalAlignment="Left" FontSize="30" HorizontalContentAlignment="Center" Margin="99,11,0,0" VerticalAlignment="Top" Height="62" Width="658" Foreground="White"/>
+            <Label x:Name="L2" Content="Ваш результат: " HorizontalAlignment="Left" FontSize="30" HorizontalContentAlignment="Center" Margin="99,368,0,0" VerticalAlignment="Top" Height="62" Width="658" Foreground="White"/>
+        </Grid>
+    </Grid>
+</Window>
